@@ -1,0 +1,16 @@
+.bigurl {
+	font-family: Menlo, Consolas, "Ubuntu Sans Mono", Courier, monospace;
+	font-size: 1.6em;
+}
+form ul {
+	padding-top: 0;
+	margin-top: 0;
+}
+form li {
+	list-style: none;
+	margin: 1em 0;
+}
+legend {
+	font-weight: 900;
+	font-size: 1.6em;
+}

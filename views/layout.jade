@@ -1,0 +1,29 @@
+doctype 5
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
+		link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/stylesheets/custom.css')
+	body
+		div.navbar.navbar-fixed-top
+			div.navbar-inner
+				div.container
+					a.btn.btn-navbar
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.brand= "Jax"
+					div.nav-collapse
+						ul.nav
+							li.active
+								a(href='#')= "Home"
+							li
+								a(href='http://github.com/vinniegarcia/jaxoff')= "Github"
+							li
+								a(href='mailto:i@vinnie.me')= "Contact"
+		div.container
+			div.hero-unit
+				block content
+		script(src='http://code.jquery.com/jquery.min.js')
+		script(src='/bootstrap/js/bootstrap.min.js')

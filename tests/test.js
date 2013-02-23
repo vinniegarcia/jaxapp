@@ -52,7 +52,7 @@ describe("Conversion", function () {
     describe("JSON conversion", function () {
         it("should provide an equal JSON representation", function () {
             xml2json.convert(convert.request, convert.response);
-            convert.response.data.should.equal(testResults);
+            convert.response.data.should.eql(testResults);
         });
     });
 });

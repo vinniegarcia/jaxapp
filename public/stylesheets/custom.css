@@ -14,3 +14,11 @@ legend {
 	font-weight: 900;
 	font-size: 1.6em;
 }
+footer p {
+	padding: 0 3em;
+}
+hr {
+	color: #ccc;
+	background: #ccc;
+	border-color: #ccc;
+}

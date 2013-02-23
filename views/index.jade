@@ -1,11 +1,11 @@
 extends layout
 
 block content
-	h1= "Jax"
-	p Feed me XML and I'll spit out JSON.
+	h1= title
+	p= tagline
 
 	p Just call 
-	code.bigurl= "http://localhost:3000/convert?xml=[ENCODED URL TO YOUR XML FILE HERE]"
+	code.bigurl= "http://" + hostname + "/convert?xml=[ENCODED URL TO YOUR XML FILE HERE]"
 	p and we will respond with a JSON representation of the file.
 
 	form(method='get', action='convert')

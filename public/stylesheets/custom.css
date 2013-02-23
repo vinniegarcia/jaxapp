@@ -1,6 +1,8 @@
 .bigurl {
 	font-family: Menlo, Consolas, "Ubuntu Sans Mono", Courier, monospace;
 	font-size: 1.1em;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
 }
 form ul {
 	padding-top: 0;

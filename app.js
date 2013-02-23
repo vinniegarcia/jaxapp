@@ -5,7 +5,6 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , user = require('./routes/user')
   , xml2json = require('./routes/xml2json')
   , http = require('http')
   , path = require('path');

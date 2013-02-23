@@ -1,6 +1,6 @@
 .bigurl {
 	font-family: Menlo, Consolas, "Ubuntu Sans Mono", Courier, monospace;
-	font-size: 1.6em;
+	font-size: 1.4em;
 }
 form ul {
 	padding-top: 0;
@@ -12,7 +12,11 @@ form li {
 }
 legend {
 	font-weight: 900;
-	font-size: 1.6em;
+	font-size: 1.4em;
+	color: #ccc;
+}
+label {
+	color: #ccc;
 }
 footer p {
 	padding: 0 3em;

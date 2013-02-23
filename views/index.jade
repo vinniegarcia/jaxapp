@@ -7,7 +7,7 @@ block content
 	p 
 		| Just call 
 		code.bigurl= "http://" + hostname + "/convert?xml=[ENCODED_XML_URL]"
-		| and we will respond with a JSON representation of the file.
+	p We will respond with a JSON representation of the file.
 
 	form(method='get', action='convert')
 		fieldset
@@ -21,6 +21,6 @@ block content
 			p 
 				| Or 
 				a(href=sampleLink)="View a converted sample" 
-				| of this 
+				|  of this 
 				a(href='/samples/books.xml') books.xml file
 				| .

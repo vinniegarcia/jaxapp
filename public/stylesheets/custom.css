@@ -3,6 +3,7 @@
 	font-size: 1.1em;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
+	white-space: pre-line;
 }
 form ul {
 	padding-top: 0;

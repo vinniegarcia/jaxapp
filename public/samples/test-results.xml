@@ -1,0 +1,4 @@
+<tests>
+	<test name="Initial test" status="pass"/>
+	<test name="Last test" status="fail"/>
+</tests>

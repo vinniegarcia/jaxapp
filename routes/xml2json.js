@@ -24,8 +24,6 @@ exports.convert = function(req, res){
 		xmlResponse.setEncoding('utf8');
 		xmlResponse.on('data', function (chunk) {
 			chunks += chunk.toString();
-			//console.log('BODY: ' + chunk);
-			//jsonResponse = parser.toJson(chunk);
 		});
 		xmlResponse.on('end', function () {
 			console.log("DATA:" + chunks);
@@ -48,8 +46,5 @@ exports.convert = function(req, res){
 	    };
 	    res.send(jsonResponse);
 	});
-	// write data to request body
-	//req.write('data\n');
-	//req.write('data\n');
 	fetch.end();
 };

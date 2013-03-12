@@ -35,6 +35,7 @@ app.all('/convert', function(req, res, next) {
 
 app.get('/', routes.index);
 app.get('/convert', xml2json.convert);
+app.get('/jsonp', xml2json.jsonp);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

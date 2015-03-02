@@ -3,40 +3,32 @@
  * Module dependencies.
  */
 
-var express = require('express')
-  , routes = require('./routes')
-  , xml2json = require('./routes/xml2json')
-  , http = require('http')
-  , path = require('path');
+var express = require('express'),
+  bodyParser = require('body-parser'),
+  statics = require('serve-static'),
+  meth = require('method-override'),
+  cors = require('cors'),
+  http = require('http'),
+  path = require('path'),
+  convert = require('./routes/convert'),
+  home = require('./routes/index'),
+  app = module.exports = express();
 
-var app = express();
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
+app.use(statics(path.join(__dirname, 'public')));
+app.use(meth());
+app.use(cors({
+  headers: ['X-Requested-With']
+}));
+app.engine('jade', require('jade').__express);
 
-app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
-  app.set('views', __dirname + '/views');
-  app.set('view engine', 'jade');
-  app.use(express.favicon());
-  app.use(express.logger('dev'));
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(app.router);
-  app.use(express.static(path.join(__dirname, 'public')));
-});
+app.get('/', home.index);
+app.get('/convert', convert('json'));
+app.get('/jsonp', convert('jsonp'));
 
-app.configure('development', function(){
-  app.use(express.errorHandler());
-});
-
-app.all('/convert', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  next();
- });
-
-app.get('/', routes.index);
-app.get('/convert', xml2json.convert);
-app.get('/jsonp', xml2json.jsonp);
-
-http.createServer(app).listen(app.get('port'), function(){
-  console.log("Express server listening on port " + app.get('port'));
+http.createServer(app).listen(3000, function(){
+  console.log("Express server listening on port 3000");
 });
